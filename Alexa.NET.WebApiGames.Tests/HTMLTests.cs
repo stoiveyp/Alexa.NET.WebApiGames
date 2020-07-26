@@ -5,7 +5,7 @@ using Alexa.NET.WebApiGames;
 
 namespace Alexa.NET.WebApiGames.Tests
 {
-    public class RequestTests
+    public class HTMLTests
     {
         [Fact]
         public void HtmlSupported()
@@ -27,6 +27,13 @@ namespace Alexa.NET.WebApiGames.Tests
         {
             StartDirective.AddSupport();
             Utility.AssertSerialization<StartDirective>("StartDirective.json");
+        }
+
+        [Fact]
+        public void HandleMessageSupported()
+        {
+            HandleMessageDirective.AddSupport();
+            Utility.AssertSerialization<HandleMessageDirective>("HandleMessage.json");
         }
     }
 }
