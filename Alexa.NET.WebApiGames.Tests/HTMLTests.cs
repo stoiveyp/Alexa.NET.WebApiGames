@@ -35,5 +35,12 @@ namespace Alexa.NET.WebApiGames.Tests
             HandleMessageDirective.AddSupport();
             Utility.AssertSerialization<HandleMessageDirective>("HandleMessage.json");
         }
+
+        [Fact]
+        public void MessageRequestSupport()
+        {
+            MessageRequest.AddToRequestConverter();
+            Utility.AssertSerialization<Request.Type.Request>("MessageRequest.json", "locale", "requestId", "timestamp");
+        }
     }
 }

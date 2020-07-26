@@ -18,6 +18,12 @@ namespace Alexa.NET.WebApiGames.Tests
             var expected = File.ReadAllText(Path.Combine(ExamplesPath, expectedFile));
             var expectedJObject = JObject.Parse(expected);
 
+            foreach (var field in exclude)
+            {
+                expectedJObject.Remove(field);
+                actualJObject.Remove(field);
+            }
+
             return JToken.DeepEquals(expectedJObject, actualJObject);
         }
 
@@ -36,10 +42,10 @@ namespace Alexa.NET.WebApiGames.Tests
             return File.ReadAllText(Path.Combine(ExamplesPath, expectedFile).Trim());
         }
 
-        public static void AssertSerialization<T>(string expectedFile)
+        public static void AssertSerialization<T>(string expectedFile, params string[] exclude)
         {
             var obj = ExampleFileContent<T>(expectedFile);
-            Assert.True(CompareJson(obj, expectedFile));
+            Assert.True(CompareJson(obj, expectedFile, exclude));
         }
     }
 }

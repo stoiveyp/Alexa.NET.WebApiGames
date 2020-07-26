@@ -20,5 +20,18 @@ skillResponse.Response.Directives.Add(new StartDirective(uri, data))
 ### Send a message to your game
 
 ```csharp
+using Alexa.NET.WebApiGames;
+...
 skillResponse.Response.Directives.Add(new HandleMessageDirective(message))
+```
+
+### Receive a message from your game
+
+```csharp
+using Alexa.NET.WebApiGames;
+MessageRequest.AddToRequestConverter();
+...
+if request.Request is MessageRequest messageRequest{
+    var msg = messageRequest.Message;
+}
 ```

@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Examples\MessageRequest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Examples\HtmlInterface.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
