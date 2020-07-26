@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "session": {},
+  "context": {
+    "System": {
+      "device": {
+        "deviceId": "amzn1.ask.device.1",
+        "supportedInterfaces": {
+          "Alexa.Presentation.HTML": {
+            "runtime": {
+              "maxVersion": "0.2"
+            }
+          },
+          "Alexa.Presentation.APL": {
+            "runtime": {
+              "maxVersion": "1.4"
+            }
+          }
+        },
+        "apiEndpoint": "https://api-amazonalexa.amazon.com",
+        "apiAccessToken": ""
+      },
+      "Viewport": {}
+    },
+    "request": {
+      "type": "LaunchRequest",
+      "requestId": "amzn1.echo-api.request.1",
+      "timestamp": "2019-06-27T15:52:19Z",
+      "locale": "en-US",
+      "shouldLinkResultBeReturned": false
+    }
+  }
+}
