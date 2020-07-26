@@ -13,5 +13,20 @@ namespace Alexa.NET.WebApiGames.Tests
             var request = Utility.ExampleFileContent<SkillRequest>("HtmlInterface.json");
             Assert.True(request.HTMLSupported());
         }
+
+        [Fact]
+        public void HtmlNotSupported()
+        {
+            var request = Utility.ExampleFileContent<SkillRequest>("HtmlInterface.json");
+            request.Context.System.Device.SupportedInterfaces.Clear();
+            Assert.False(request.HTMLSupported());
+        }
+
+        [Fact]
+        public void StartDirectiveSupported()
+        {
+            StartDirective.AddSupport();
+            Utility.AssertSerialization<StartDirective>("StartDirective.json");
+        }
     }
 }

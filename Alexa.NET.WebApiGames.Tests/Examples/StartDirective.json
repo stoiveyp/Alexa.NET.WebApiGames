@@ -1,0 +1,23 @@
+{
+  "type": "Alexa.Presentation.HTML.Start",
+  "data": {
+    "mySsml": "<speak>Hello</speak>"
+  },
+  "request": {
+    "uri": "https://mydomain.example.com/mygame.html",
+    "method": "GET",
+    "headers": {
+      "Authorization": "Basic eyJ "
+    }
+  },
+  "transformers": [
+    {
+      "inputPath": "mySsml",
+      "transformer": "ssmlToSpeech",
+      "outputName": "myTransformedSsml"
+    }
+  ],
+  "configuration": {
+    "timeoutInSeconds": 300
+  }
+}

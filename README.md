@@ -8,3 +8,11 @@ using Alexa.NET.WebApiGames;
 ...
 skillRequest.HTMLSupported();
 ```
+
+### Start a Web API Game
+
+```csharp
+using Alexa.NET.WebApiGames;
+...
+skillResponse.Response.Directives.Add(new StartDirective(uri, data))
+```
